@@ -25,6 +25,12 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
- body nav span {
-   font-family: "Bungee", cursive;
+
+ main {
+   position: relative;
+   top: 520px;
+   width: 90%;
+   margin: 0 auto;
+   background-color: #f4f1ec;
+   padding-bottom: 40px;
  }

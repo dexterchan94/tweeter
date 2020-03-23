@@ -1,0 +1,36 @@
+.new-tweet {
+  text-align: center;
+}
+
+.new-tweet form textarea {
+  width: 100%;
+  border: none;
+  background-color: #f4f1ec;
+  border-bottom: #545149 6px solid;
+  resize: none;
+  height: 3rem;
+  margin-bottom: 10px;
+}
+
+.new-tweet form textarea:focus {
+  outline: none;
+}
+
+.new-tweet form textarea::placeholder {
+  font-weight: 600;
+  color: #545149;
+}
+
+.new-tweet-bottom {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Bungee", cursive;
+}
+
+.new-tweet-bottom button {
+  color: white;
+  border: none;
+  background-color: #4056a1;
+  font-size: 1.5rem;
+  padding: 5px;
+}
