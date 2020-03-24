@@ -58,9 +58,11 @@ $(document).ready(function() {
     event.preventDefault();
 
     if (!$("#tweet-text").val()) {
-      alert("Cannot submit an empty tweet");
+      $(".tweet-error").text("Cannot submit an empty tweet");
+      $(".tweet-error").slideDown();
     } else if ($("#tweet-text").val().length > 140) {
-      alert("Tweet character length must be less than 140");
+      $(".tweet-error").text("Number of characters must be less than 140");
+      $(".tweet-error").slideDown();
     } else {
       console.log('Form submitted, performing ajax call...');
 
@@ -69,6 +71,7 @@ $(document).ready(function() {
         data: $(this).serialize(),
         success: (data) => {
           console.log("AJAX POST success!");
+          $(".tweet-error").slideUp();
           $('#tweet-text').val("");
           $('.new-tweet-bottom .counter').val("140");
           loadTweets();

@@ -2,6 +2,11 @@
   text-align: center;
 }
 
+.new-tweet .tweet-error {
+  color: red;
+  display: none;
+}
+
 .new-tweet form textarea {
   width: 100%;
   border: none;
