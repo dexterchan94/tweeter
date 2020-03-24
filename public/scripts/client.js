@@ -82,7 +82,11 @@ $(document).ready(function() {
       });
     }
 
+  });
 
+  $(".nav-right button").on('click', function () {
+    $("section.new-tweet").slideToggle();
+    $("#tweet-text").focus();
   });
 
 

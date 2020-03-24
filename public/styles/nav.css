@@ -5,10 +5,24 @@ nav {
   z-index: 999;
   background-color: #4056a1;
   color: #FFFFFF;
-  padding: 1.5rem;
+  padding: 2rem;
   top: 0;
+  display: flex;
+  justify-content: space-between;
 }
 
-nav span {
+.nav-left span {
   font-family: "Bungee", cursive;
+  font-size: 2rem;
+}
+
+.nav-right button {
+  background: none;
+  border: none;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+.nav-right button:focus {
+  outline: none;
 }
