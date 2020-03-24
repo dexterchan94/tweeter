@@ -49,4 +49,9 @@
 
 .tweet footer i {
   margin: 0 10px;
+  display: none;
+}
+
+.tweet:hover i {
+  display: inline;
 }
