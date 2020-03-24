@@ -53,7 +53,6 @@ const renderTweets = function(tweets) {
 }
 
 const loadTweets = () => {
-  console.log("Performing AJAX GET");
 
   $.ajax('/tweets', { 
     method: 'GET',
@@ -88,7 +87,6 @@ $(document).ready(function() {
         method: 'POST',
         data: $(this).serialize(),
         success: (data) => {
-          console.log("AJAX POST success!");
           $(".tweet-error").slideUp();
           $('#tweet-text').val("");
           $('.new-tweet-bottom .counter').val("140");
