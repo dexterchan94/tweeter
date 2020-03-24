@@ -4,35 +4,11 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  }
-];
-
 const renderTweets = function(tweets) {
+    $('#tweets-container').empty();
   for (tweet of tweets) {
     const $tweet = createTweetElement(tweet);
-    $('#tweets-container').append($tweet);
+    $('#tweets-container').prepend($tweet);
   }
 }
 
@@ -52,38 +28,55 @@ const createTweetElement = (tweetData) => {
 }
 
 
-
-
-
 $(document).ready(function() {
-  renderTweets(data);
 
-  $("#new-tweet-form").on('submit', function (event) {
-    event.preventDefault();
-    console.log('Form submitted, performing ajax call...');
-
-    // const newTweetData = {
-    //   user: {
-    //     name: "Dexter",
-    //     avatars: "",
-    //     handle: "@TRexDex"
-    //   },
-    //   content: {
-    //     text: "dinosaur sounds"
-    //   },
-    //   created_at: Date.now()
-    // };
+  const loadTweets = () => {
+    console.log("Performing AJAX GET");
 
     $.ajax('/tweets', { 
-      method: 'POST',
-      data: $(this).serialize(),
+      method: 'GET',
       success: (data) => {
-        alert("success!");
+        renderTweets(data);
       },
       error: () => {
         alert("error!");
       }
     });
 
+  };
+
+  loadTweets();
+
+
+  $("#new-tweet-form").on('submit', function (event) {
+    event.preventDefault();
+
+    if (!$("#tweet-text").val()) {
+      alert("Cannot submit an empty tweet");
+    } else if ($("#tweet-text").val().length > 140) {
+      alert("Tweet character length must be less than 140");
+    } else {
+      console.log('Form submitted, performing ajax call...');
+
+      $.ajax('/tweets', { 
+        method: 'POST',
+        data: $(this).serialize(),
+        success: (data) => {
+          console.log("AJAX POST success!");
+          $('#tweet-text').val("");
+          $('.new-tweet-bottom .counter').val("140");
+          loadTweets();
+        },
+        error: () => {
+          console.log("AJAX POST error!");
+        }
+      });
+    }
+
+
   });
+
+
+
+
 });
