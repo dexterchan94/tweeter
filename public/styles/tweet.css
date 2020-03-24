@@ -15,7 +15,23 @@
 .tweet header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   font-weight: 300;
+}
+
+.tweet header div {
+  display: flex;
+  align-items: center;
+}
+
+.tweet header .username {
+  display: none;
+  color: #b8bab9;
+}
+
+.tweet img {
+  width: 40px;
+  margin-right: 10px;
 }
 
 .tweet p {
@@ -31,7 +47,6 @@
   padding-top: 10px;
 }
 
-.tweet header .username {
-  display: none;
-  color: #b8bab9;
+.tweet footer i {
+  margin: 0 10px;
 }

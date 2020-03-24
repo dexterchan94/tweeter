@@ -22,11 +22,15 @@ const createTweetElement = (tweetData) => {
   const markup = `
   <article class="tweet">
     <header>
-      <span>${tweetData.user.name}</span><span class="username">${tweetData.user.handle}</span>
+      <div>
+        <img src="${tweetData.user.avatars}">
+        <span> ${tweetData.user.name}</span>
+      </div>
+      <span class="username">${tweetData.user.handle}</span>
     </header>
     <p>${escape(tweetData.content.text)}</p>
     <footer>
-      <span>${tweetData.created_at}</span><span>icons</span>
+      <span>${tweetData.created_at}</span><span><i class="fas fa-flag"></i><i class="fas fa-dove"></i><i class="fas fa-thumbs-up"></i></span>
     </footer>
   </article>
   `;
@@ -87,6 +91,29 @@ $(document).ready(function() {
   $(".nav-right button").on('click', function () {
     $("section.new-tweet").slideToggle();
     $("#tweet-text").focus();
+  });
+
+  $(".nav-right i").on('click', function () {
+    $("section.new-tweet").slideToggle();
+    $("#tweet-text").focus();
+  });
+
+  $(window).on("scroll", function () {
+    if ($(window).scrollTop() == 0) {
+      $(".nav-right").css("display", "block");
+    } else {
+      $(".nav-right").css("display", "none");
+    }
+    $(".scroll-button").css("display", "inline-block");
+  });
+
+  $(".scroll-button").on("click", function () {
+    $(window).scrollTop(0);
+    $("section.new-tweet").slideDown()
+    $("#tweet-text").focus()
+    setTimeout(() => {
+      $(".scroll-button").css("display", "none");
+    }, 5);
   });
 
 

@@ -3,7 +3,7 @@ nav {
   height: 120px;
   width: 100vw;
   z-index: 999;
-  background-color: #4056a1;
+  background: transparent;
   color: #FFFFFF;
   padding: 2rem;
   top: 0;
@@ -16,6 +16,10 @@ nav {
   font-size: 2rem;
 }
 
+.nav-right {
+  text-align: center;
+}
+
 .nav-right button {
   background: none;
   border: none;
@@ -25,4 +29,22 @@ nav {
 
 .nav-right button:focus {
   outline: none;
+}
+
+.nav-right i {
+  cursor: pointer;
+}
+
+.scroll-button {
+  color: #FFFFFF;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: red;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  outline: none;
+  display: none;
+  cursor: pointer;
 }
