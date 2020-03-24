@@ -1,0 +1,36 @@
+.tweet {
+  border: #545149 4px solid;
+  margin: 50px 0;
+  padding: 20px;
+}
+
+.tweet:hover {
+  box-shadow: 5px 5px #b8bab9;
+}
+
+.tweet:hover .username {
+  display: inline;
+}
+
+.tweet header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 300;
+}
+
+.tweet p {
+  font-weight: 400;
+}
+
+.tweet footer {
+  border-top: #545149 4px solid;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1rem;
+  padding-top: 10px;
+}
+
+.tweet header .username {
+  display: none;
+  color: #b8bab9;
+}
