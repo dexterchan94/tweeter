@@ -3,6 +3,11 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
+const escape =  function(str) {
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+}
 
 const renderTweets = function(tweets) {
     $('#tweets-container').empty();
@@ -13,12 +18,13 @@ const renderTweets = function(tweets) {
 }
 
 const createTweetElement = (tweetData) => {
+
   const markup = `
   <article class="tweet">
     <header>
       <span>${tweetData.user.name}</span><span class="username">${tweetData.user.handle}</span>
     </header>
-    <p>${tweetData.content.text}</p>
+    <p>${escape(tweetData.content.text)}</p>
     <footer>
       <span>${tweetData.created_at}</span><span>icons</span>
     </footer>
