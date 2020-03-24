@@ -44,7 +44,7 @@
 
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
-        <form action="/tweets/" method="POST">
+        <form id="new-tweet-form" action="/tweets/" method="POST">
           <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
           <div class="new-tweet-bottom">
             <button type="submit">Tweet</button>
@@ -52,22 +52,8 @@
           </div>
         </form>
       </section>
-      
-      <section>
 
-        <article class="tweet">
-          <header>
-            <span>Dexter</span><span class="username">@DexterChan</span>
-          </header>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur impedit libero delectus, sapiente reprehenderit harum suscipit id voluptatum accusamus? Dignissimos.</p>
-          <footer>
-            <span>10 days ago</span><span>icons</span>
-          </footer>
-        </article>
-
-
-
-
+      <section id="tweets-container">
       </section>
 
     </main>
