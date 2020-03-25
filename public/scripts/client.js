@@ -14,7 +14,7 @@ const timeElapsed = function(tweetData) {
   }
 };
 
-// Convery escape characters to prevent XSS
+// Convert escape characters to prevent XSS
 const escape =  function(str) {
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
@@ -25,17 +25,17 @@ const escape =  function(str) {
 const createTweetElement = (tweetData) => {
   const markup = `
   <article class="tweet">
-  <header>
-  <div>
-  <img src="${tweetData.user.avatars}">
-  <span> ${tweetData.user.name}</span>
-  </div>
-  <span class="username">${tweetData.user.handle}</span>
-  </header>
-  <p>${escape(tweetData.content.text)}</p>
-  <footer>
-  <span>${timeElapsed(tweetData)}</span><span><i class="fas fa-flag"></i><i class="fas fa-dove"></i><i class="fas fa-thumbs-up"></i></span>
-  </footer>
+    <header>
+      <div>
+        <img src="${tweetData.user.avatars}">
+        <span> ${tweetData.user.name}</span>
+      </div>
+      <span class="username">${tweetData.user.handle}</span>
+    </header>
+    <p>${escape(tweetData.content.text)}</p>
+    <footer>
+      <span>${timeElapsed(tweetData)}</span><span><i class="fas fa-flag"></i><i class="fas fa-dove"></i><i class="fas fa-thumbs-up"></i></span>
+    </footer>
   </article>
   `;
   return markup;
@@ -53,15 +53,10 @@ const renderTweets = function(tweets) {
 // Perform an AJAX request to fetch all tweets from database
 const loadTweets = () => {
 
-  $.ajax('/tweets', { 
-    method: 'GET',
-    success: (data) => {
+  $.get("/tweets")
+    .then((data) => {
       renderTweets(data);
-    },
-    error: () => {
-      alert("error!");
-    }
-  });
+    });
 
 };
 
@@ -86,21 +81,14 @@ $(document).ready(function() {
 
     // Form submitted successfully
     } else {
-      console.log('Form submitted, performing ajax call...');
 
-      $.ajax('/tweets', { 
-        method: 'POST',
-        data: $(this).serialize(),
-        success: (data) => {
-          $(".tweet-error").slideUp();
-          $('#tweet-text').val("");
-          $('.new-tweet-bottom .counter').val("140");
-          loadTweets();
-        },
-        error: () => {
-          console.log("AJAX POST error!");
-        }
-      });
+      $.post("/tweets", $(this).serialize())
+       .then(() => {
+        $(".tweet-error").slideUp();
+        $('#tweet-text').val("");
+        $('.new-tweet-bottom .counter').val("140");
+        loadTweets();
+       });
     }
 
   });
