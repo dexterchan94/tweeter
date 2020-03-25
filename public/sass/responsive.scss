@@ -1,6 +1,8 @@
+$navbar-blue: #4056a1;
+
 @media (min-width: 1024px) {
   nav {
-    background-color: #4056a1;
+    background-color: $navbar-blue;
   }
 
   .page-header, main {
@@ -28,6 +30,6 @@
   .tweet:first-of-type {
     margin-top: 0;
   }
+
 }
 
-/*# sourceMappingURL=responsive.css.map */

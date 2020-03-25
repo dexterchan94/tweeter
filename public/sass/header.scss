@@ -1,0 +1,28 @@
+$header-background-orange: #d69e2d;
+
+.page-header {
+  height: 400px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  background-color: $header-background-orange;
+  background-image: url("https://www.transparenttextures.com/patterns/ag-square.png");
+
+  div {
+    text-align: center;
+
+    img {
+      margin-top: 50px;
+    }
+
+    h2 {
+      margin-top: 0;
+      color: white;
+
+      span {
+        font-weight: 300;
+      }
+    }
+
+  }
+}

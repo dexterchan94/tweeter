@@ -1,0 +1,47 @@
+$main-text-gray: #545149;
+$background-off-white: #f4f1ec;
+$navbar-blue: #4056a1;
+
+.new-tweet {
+  text-align: center;
+  display: none;
+
+  .tweet-error {
+    color: red;
+    display: none;
+  }
+
+  form {
+    textarea {
+      width: 100%;
+      border: none;
+      background-color: $background-off-white;
+      border-bottom: $main-text-gray 4px solid;
+      resize: none;
+      height: 3rem;
+      margin-bottom: 10px;
+    }
+    textarea:focus {
+      outline: none;
+    }
+    textarea::placeholder {
+      font-weight: 600;
+      color: $main-text-gray;
+    }
+  }
+
+}
+
+.new-tweet-bottom {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Bungee", cursive;
+
+  button {
+    color: white;
+    border: none;
+    background-color: $navbar-blue;
+    font-size: 1.5rem;
+    padding: 5px;
+  }
+}

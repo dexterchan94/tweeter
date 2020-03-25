@@ -6,20 +6,18 @@
   background-color: #d69e2d;
   background-image: url("https://www.transparenttextures.com/patterns/ag-square.png");
 }
-
 .page-header div {
   text-align: center;
 }
-
 .page-header div img {
   margin-top: 50px;
 }
-
 .page-header div h2 {
   margin-top: 0;
   color: white;
 }
-
 .page-header div h2 span {
   font-weight: 300;
 }
+
+/*# sourceMappingURL=header.css.map */

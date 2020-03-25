@@ -1,9 +1,4 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
-
+// Accepts a tweet object as a parameter and returns how long ago it was posted
 const timeElapsed = function(tweetData) {
   const time = (Date.now() - tweetData.created_at) / 1000;
   if (time < 60) {
@@ -19,12 +14,14 @@ const timeElapsed = function(tweetData) {
   }
 };
 
+// Convery escape characters to prevent XSS
 const escape =  function(str) {
   let div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 }
 
+// Build HTML elements for new tweet
 const createTweetElement = (tweetData) => {
   const markup = `
   <article class="tweet">
@@ -44,6 +41,7 @@ const createTweetElement = (tweetData) => {
   return markup;
 }
 
+// Accepts a data array containin all tweets renders them to the tweets container
 const renderTweets = function(tweets) {
     $('#tweets-container').empty();
   for (tweet of tweets) {
@@ -52,6 +50,7 @@ const renderTweets = function(tweets) {
   }
 }
 
+// Perform an AJAX request to fetch all tweets from database
 const loadTweets = () => {
 
   $.ajax('/tweets', { 
@@ -68,18 +67,24 @@ const loadTweets = () => {
 
 
 $(document).ready(function() {
-
+  // Fetch all existing tweets and render them to the page
   loadTweets();
 
   $("#new-tweet-form").on('submit', function (event) {
+    // Prevent page from refreshing
     event.preventDefault();
 
+    // Form is empty
     if (!$("#tweet-text").val()) {
       $(".tweet-error").text("Cannot submit an empty tweet");
       $(".tweet-error").slideDown();
+
+    // Input has too many characters
     } else if ($("#tweet-text").val().length > 140) {
       $(".tweet-error").text("Number of characters must be less than 140");
       $(".tweet-error").slideDown();
+
+    // Form submitted successfully
     } else {
       console.log('Form submitted, performing ajax call...');
 
@@ -100,6 +105,7 @@ $(document).ready(function() {
 
   });
 
+  // New tweet form toggler
   $(".nav-right button").on('click', function () {
     $("section.new-tweet").slideToggle();
     $("#tweet-text").focus();
@@ -110,6 +116,8 @@ $(document).ready(function() {
     $("#tweet-text").focus();
   });
 
+  // Reveal scroll-button if user has scrolled down (see below)
+  // Hide tweet form toggler if user has scrolled down
   $(window).on("scroll", function () {
     if ($(window).scrollTop() === 0) {
       $(".nav-right").css("display", "block");
@@ -122,6 +130,7 @@ $(document).ready(function() {
     }
   });
 
+  // Scrolls to the top when clicked and opens the new tweet form
   $(".scroll-button").on("click", function () {
     $(window).scrollTop(0);
     $("section.new-tweet").slideDown();

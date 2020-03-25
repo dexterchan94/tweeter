@@ -10,28 +10,23 @@ nav {
   display: flex;
   justify-content: space-between;
 }
-
-.nav-left span {
+nav .nav-left span {
   font-family: "Bungee", cursive;
   font-size: 2rem;
 }
-
-.nav-right {
+nav .nav-right {
   text-align: center;
 }
-
-.nav-right button {
+nav .nav-right button {
   background: none;
   border: none;
   color: #FFFFFF;
   cursor: pointer;
 }
-
-.nav-right button:focus {
+nav .nav-right button:focus {
   outline: none;
 }
-
-.nav-right i {
+nav .nav-right i {
   cursor: pointer;
 }
 
@@ -49,3 +44,4 @@ nav {
   cursor: pointer;
 }
 
+/*# sourceMappingURL=nav.css.map */

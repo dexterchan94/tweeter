@@ -1,3 +1,6 @@
+$main-text-gray: #545149;
+$background-off-white: #f4f1ec;
+
 html {
   box-sizing: border-box;
 }
@@ -7,11 +10,11 @@ html {
 }
 
 body {
-  color: #545149;
-  background-color: #f4f1ec;
+  color: $main-text-gray;
+  background-color: $background-off-white;
   font-family: "Source Sans Pro", sans-serif;
   font-size: 24px;
-  display: flex;
+  display: flex;  
 }
 
 main {
@@ -19,8 +22,8 @@ main {
   top: 400px;
   width: 90%;
   margin: 0 auto;
-  background-color: #f4f1ec;
+  background-color: $background-off-white;
   padding-bottom: 40px;
 }
 
-/*# sourceMappingURL=layout.css.map */
+
