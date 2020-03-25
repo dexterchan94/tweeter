@@ -8,6 +8,17 @@ Users can submit a tweet and the feed will update with the new tweet using an AJ
 
 This responsive page has 2 layouts with the breakpoint at 1024px.
 
+## Screenshots
+
+Desktop
+
+!["desktop layout"](https://github.com/dexterchan94/tweeter/blob/master/docs/desktop-header.png?raw=true)
+
+Mobile
+
+!["mobile header"](https://github.com/dexterchan94/tweeter/blob/master/docs/mobile-header.png?raw=true)
+!["mobile feed"](https://github.com/dexterchan94/tweeter/blob/master/docs/mobile-feed.png?raw=true)
+
 ## Getting Started
 
 1. Fork this repository, then clone your fork of this repository.
