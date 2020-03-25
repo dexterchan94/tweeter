@@ -10,13 +10,18 @@ This responsive page has 2 layouts with the breakpoint at 1024px.
 
 ## Screenshots
 
-Desktop
+### Desktop layout
 
 !["desktop layout"](https://github.com/dexterchan94/tweeter/blob/master/docs/desktop-header.png?raw=true)
 
-Mobile
+
+### Mobile Header
 
 !["mobile header"](https://github.com/dexterchan94/tweeter/blob/master/docs/mobile-header.png?raw=true)
+
+
+### Mobile Feed
+
 !["mobile feed"](https://github.com/dexterchan94/tweeter/blob/master/docs/mobile-feed.png?raw=true)
 
 ## Getting Started
