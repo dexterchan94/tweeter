@@ -17,4 +17,9 @@
 
 .page-header div h2 {
   margin-top: 0;
+  color: white;
+}
+
+.page-header div h2 span {
+  font-weight: 300;
 }

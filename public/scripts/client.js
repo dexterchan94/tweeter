@@ -111,21 +111,21 @@ $(document).ready(function() {
   });
 
   $(window).on("scroll", function () {
-    if ($(window).scrollTop() == 0) {
+    if ($(window).scrollTop() === 0) {
       $(".nav-right").css("display", "block");
     } else {
       $(".nav-right").css("display", "none");
     }
-    $(".scroll-button").css("display", "inline-block");
+    if ($(window).scrollTop() > 100) {
+      $(".scroll-button").css("display", "inline-block");
+    }
   });
 
   $(".scroll-button").on("click", function () {
     $(window).scrollTop(0);
-    $("section.new-tweet").slideDown()
-    $("#tweet-text").focus()
-    setTimeout(() => {
-      $(".scroll-button").css("display", "none");
-    }, 5);
+    $("section.new-tweet").slideDown();
+    $("#tweet-text").focus();
+    $(".scroll-button").css("display", "none");
   });
 
 

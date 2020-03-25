@@ -1,0 +1,33 @@
+@media (min-width: 1024px) {
+  nav {
+    background-color: #36649c;
+  }
+
+  .page-header, main {
+    top: 200px;
+  }
+
+  .page-header {
+    width: 30%;
+    position: relative;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+  }
+
+  .new-tweet {
+    margin-bottom: 50px;
+  }
+
+  main {
+    width: 60%;
+    padding-top: 0;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+  }
+
+  .tweet:first-of-type {
+    margin-top: 0;
+  }
+
+}
+
