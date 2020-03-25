@@ -113,6 +113,7 @@ $(document).ready(function() {
   $(window).on("scroll", function () {
     if ($(window).scrollTop() === 0) {
       $(".nav-right").css("display", "block");
+      $(".scroll-button").css("display", "none");
     } else {
       $(".nav-right").css("display", "none");
     }
